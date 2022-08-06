@@ -1,0 +1,17 @@
+<launch>
+    <arg name="cameras_number" default="1"/>
+    <arg name="environment" default="flat"/>
+    <arg name="map_type" default="binary_map"/>
+    <arg name="measurement_type" default="per_cell_measurement"/>
+
+    <node pkg="map_maker" type="map_making_node_main.py" name="map_making_node" output="screen">
+        <!-- Write "1" of "2" -->
+        <param name="cameras_number" type="int" value="$(arg cameras_number)"/>
+        <!-- Write "flat" or "unstructured" -->
+        <param name="environment" type="str" value="$(arg environment)"/>
+        <!-- Write "probability_map" or "binary_map" -->
+        <param name="map_type" type="str" value="$(arg map_type)"/>
+        <!-- If "probability_map" write "per_point_measurement" or "per_cell_measurement" -->
+        <param name="measurement_type" type="str" value="$(arg measurement_type)"/>
+    </node>
+</launch>

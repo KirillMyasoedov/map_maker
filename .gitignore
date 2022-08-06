@@ -1,0 +1,5 @@
+.idea/
+product/
+tests/
+venv/
+src/__pycache__/
